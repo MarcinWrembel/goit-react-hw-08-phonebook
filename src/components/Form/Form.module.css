@@ -8,14 +8,13 @@
 }
 
 .formLabel {
-  /* padding-top: 10px; */
   align-self: baseline;
   color: darkslateblue;
   font-weight: 700;
 }
 
 .formInput {
-  min-width: 300px;
+  min-width: 260px;
   display: block;
   margin-top: 5px;
   border: 1px solid black;

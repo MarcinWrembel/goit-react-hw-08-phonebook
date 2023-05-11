@@ -1,0 +1,18 @@
+.header {
+  margin-bottom: 16px;
+  border-bottom: 1px solid #2a363b;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: #00a6ed9a;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  min-width: 260px;
+  max-width: 800px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}

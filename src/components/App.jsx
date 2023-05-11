@@ -1,38 +1,19 @@
+import Routing from 'Routing';
 import React, { useEffect } from 'react';
-import ContactForm from './Form/Form';
-import ContactList from './Contacts/ContactList';
-import Filter from './Filter/Filter';
-import Section from './Section/Section';
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { selectContacts } from 'redux/contacts/selectors';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/contacts/operations';
-
+import useAuth from '../hooks/useAuth';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from 'redux/auth/operations';
 
 const App = () => {
-const dispatch=useDispatch()
-const {isLoading,error}=useSelector(selectContacts)
+  const dispatch=useDispatch()
+  const { isRefreshing } = useAuth();
 
-  useEffect(()=>{
-    dispatch(fetchContacts())
+  useEffect(()=> {
+    dispatch(refreshUser())
   },[dispatch])
 
-  return (
-    <>
-    <Section title="Phonebook">
-    {isLoading && !error && <h1> Loading...</h1>}
-    {error && <p>{error.message}</p>}
-        <ContactForm />
-      </Section>
-      <Section title="Contacts">
-        <Filter />
-        <ContactList />
-        <ToastContainer />
-      </Section>
-    </>
-  );
+  return isRefreshing ? <b>Refreshing user...</b> : <Routing />;
 };
 
 export default App;

@@ -12,16 +12,18 @@ import 'react-toastify/dist/ReactToastify.css';
 const ContactForm = () => {
   const dispatch = useDispatch();
   const {contacts }= useSelector(selectContacts);
+
+  
   //on form Submit function
   const handleSubmit = e => {
     //prevent default form behaviour
     e.preventDefault();
+    const form = e.currentTarget;
 
-    //create new contact object from input based onChange event and values from setState
+
     const newContact = {
-      // id: uuidv4(),
-      name: e.target[0].value,
-      phone: e.target[1].value,
+      name: form.name.value,
+      phone: form.number.value,
     };
 
     //check if contact exist in data
@@ -50,11 +52,8 @@ const ContactForm = () => {
     }
 
     //clear form
-    const form = e.currentTarget;
     form.reset()
   };
-
-  //creating DOM elements
 
   return (
     <div>
@@ -67,7 +66,6 @@ const ContactForm = () => {
             type="text"
             name="name"
             pattern="^[a-zA-Zа]+(([' \-]?[a-zA-Zа ])?[a-zA-Zа]*)*$"
-            // pattern="/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
             
@@ -81,7 +79,7 @@ const ContactForm = () => {
             id="number"
             name="number"
             // pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}/"
-            pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
+            // pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
