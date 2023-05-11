@@ -2,7 +2,7 @@
 
 # Fullstack Dev Course, React module
 ### Demo
-https://marcinwrembel.github.io/goit-react-hw-07-phonebook/
+https://marcinwrembel.github.io/goit-react-hw-08-phonebook/
 
 ### Description
 This is application allows to manage phonebook data with Mockapi.io which are saved in server. 
