@@ -23,7 +23,7 @@ const ContactForm = () => {
 
     const newContact = {
       name: form.name.value,
-      phone: form.number.value,
+      number: form.number.value,
     };
 
     //check if contact exist in data
