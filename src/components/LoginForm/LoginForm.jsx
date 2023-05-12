@@ -33,6 +33,7 @@ export const LoginForm = () => {
             name="password"
             placeholder="Enter password"
             required
+            autoComplete='off'
           />
         </label>
         <button type="submit">Log In</button>

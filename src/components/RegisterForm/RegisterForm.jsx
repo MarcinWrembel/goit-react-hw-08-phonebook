@@ -30,7 +30,7 @@ export const RegisterForm = () => {
             type="text"
             name="name"
             placeholder="Enter username"
-            required
+            required            
           />
         </label>
         <label className={css.formLabel}>
@@ -53,6 +53,7 @@ export const RegisterForm = () => {
             pattern=".{7,}"
             title="Your password must contain at least 7 characters."
             required
+            autoComplete='off'
           />
         </label>
         <button className={css.formButton} type="submit">

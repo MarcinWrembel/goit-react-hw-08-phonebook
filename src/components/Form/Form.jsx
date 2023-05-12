@@ -81,6 +81,7 @@ const ContactForm = () => {
 
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
+            
           />
         </label>
         <button type="submit" className={css.btnAdd}>
