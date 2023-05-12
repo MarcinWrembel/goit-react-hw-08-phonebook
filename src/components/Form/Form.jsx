@@ -11,15 +11,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const {contacts }= useSelector(selectContacts);
+  const { contacts } = useSelector(selectContacts);
 
-  
   //on form Submit function
   const handleSubmit = e => {
     //prevent default form behaviour
     e.preventDefault();
     const form = e.currentTarget;
-
 
     const newContact = {
       name: form.name.value,
@@ -52,7 +50,7 @@ const ContactForm = () => {
     }
 
     //clear form
-    form.reset()
+    form.reset();
   };
 
   return (
@@ -65,10 +63,9 @@ const ContactForm = () => {
             id="name"
             type="text"
             name="name"
-            pattern="^[a-zA-Zа]+(([' \-]?[a-zA-Zа ])?[a-zA-Zа]*)*$"
+            pattern="^[a-zA-Zа]+(([' \-]?[a-zA-Zа ])?[a-zA-Zа]*)*$"       
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
-            
           />
         </label>
         <label htmlFor="number" className={css.formLabel}>
@@ -78,7 +75,10 @@ const ContactForm = () => {
             type="tel"
             id="number"
             name="number"
-            pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}/"
+            // pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
+            // pattern="^[\+]?[(]?[0-9]{3}[)]?[\-\.]?[0-9]{2,3}[\-\.]?[0-9]{4,6}$"
+            pattern="^[\+]?[\(]?[0-9]{3}[\)]?[\-\s\.]?[0-9]{2,3}[\-\s\.]?[0-9]{4,6}$"
+
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
