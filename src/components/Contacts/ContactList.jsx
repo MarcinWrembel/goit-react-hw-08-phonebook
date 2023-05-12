@@ -15,7 +15,7 @@ const ContactList = () => {
   const filteredContacts = stateContacts.contacts.filter(contact => {
     return (
       contact.name.toLowerCase().includes(filterValue.filter.toLowerCase()) ||
-      contact.phone.includes(filterValue.filter)
+      contact.number.includes(filterValue.filter)
     );
   });
 
@@ -26,7 +26,7 @@ const ContactList = () => {
   const liItems = filteredContacts === [] ? "" : filteredContacts.map(item => {
     return (
       <li key={item.id} id={item.id} className={css.contactListItem}>
-        {item.name}: {item.phone}
+        {item.name}: {item.number}
         <button
           onClick={() => handledDelete(item.id)}
           className={css.btnDelete}
