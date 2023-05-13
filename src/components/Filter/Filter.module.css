@@ -1,16 +1,17 @@
 .filterLabel {
-  min-width: 300px;
+  max-width: 300px;
   margin-top: 10px;
   font-weight: 700;
 }
 
 .filterInput {
-  width: 100%;
+  width: 300px;
   display: block;
-  margin-top: 20px;
-  height: 30px;
-  border: 1px solid darkslateblue;
-  border-radius: 10px;
+  margin-top: 5px;
+  height: 40px;
   padding-left: 15px;
-  margin-bottom: 15px;
+  border-radius: 15px;
+  border: 1px solid #00a6ed;
+  height: 30px;
+  padding-left: 15px;
 }

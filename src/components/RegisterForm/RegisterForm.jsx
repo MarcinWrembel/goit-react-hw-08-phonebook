@@ -2,13 +2,27 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import page from '../../pages/Home/HomePage.module.css';
 import css from './RegisterForm.module.css';
+import { notify } from 'utils/notify';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
+  const checkPasswords = form => {
+    const pass1 = form.elements.password.value;
+    const pass2 = form.elements.confPassword.value;
+
+    if (pass1 !== pass2) {
+      console.log({ pass1 }, { pass2 });
+      return notify();
+    }
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
+
+    checkPasswords(form);
+
     dispatch(
       register({
         name: form.elements.name.value,
@@ -16,6 +30,7 @@ export const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
+
     form.reset();
   };
 
@@ -30,7 +45,7 @@ export const RegisterForm = () => {
             type="text"
             name="name"
             placeholder="Enter username"
-            required            
+            required
           />
         </label>
         <label className={css.formLabel}>
@@ -53,7 +68,20 @@ export const RegisterForm = () => {
             pattern=".{7,}"
             title="Your password must contain at least 7 characters."
             required
-            autoComplete='off'
+            autoComplete="off"
+          />
+        </label>
+        <label className={css.formLabel}>
+          Confirm password
+          <input
+            className={css.formInput}
+            type="password"
+            name="confPassword"
+            placeholder=" Confirm password"
+            pattern=".{7,}"
+            title="Your password must contain at least 7 characters."
+            required
+            autoComplete="off"
           />
         </label>
         <button className={css.formButton} type="submit">

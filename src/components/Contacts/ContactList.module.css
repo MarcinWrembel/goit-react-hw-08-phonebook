@@ -12,18 +12,17 @@
 }
 
 .btnDelete {
-  padding: 3px;
-  font-size: 12px;
-  background-color: darkslateblue;
+  padding: 5px;
+  font-size: 11px;
+  background-color: #163263;
   color: white;
-  border-radius: 5px;
+  border: 1px solid #163263;
+  border-radius: 15px;
   cursor: pointer;
   transform: scale(1);
   transition: transform 300 ease;
 }
 
-.btnDelete:hover{
-    transform: scale(1.1)
-    
+.btnDelete:hover {
+  transform: scale(1.1);
 }
-

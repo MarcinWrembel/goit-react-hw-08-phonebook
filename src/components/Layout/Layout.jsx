@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
+// import { Toaster } from 'react-hot-toast';
 import AppBar  from '../AppBar/AppBar';
 import { Suspense } from 'react';
 import Loader from '../Loader/Loader';
@@ -12,7 +12,7 @@ export const Layout = () => {
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
-      <Toaster position="top-right" reverseOrder={false} />
+      {/* <Toaster position="top-right" reverseOrder={false} /> */}
     </div>
   );
 };

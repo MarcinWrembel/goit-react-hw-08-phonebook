@@ -1,7 +1,11 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+  min-width: 300px;
+  max-width: 360px;
   text-align: center;
 }
 
@@ -23,13 +27,14 @@
   cursor: pointer;
   font-weight: 700;
   margin: 0 auto;
-  margin-top: 50px; 
+  margin-top: 50px;
   background-color: #00a6ed;
   font-size: 20px;
   color: white;
   letter-spacing: 2px;
 }
 
-.formLabel{
-    font-weight: 500;
+.formLabel {
+  font-weight: 500;
 }
+

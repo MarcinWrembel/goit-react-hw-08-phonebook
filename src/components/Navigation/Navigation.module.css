@@ -1,3 +1,4 @@
+
 .link {
   display: inline-block;
   text-decoration: none;
@@ -7,5 +8,7 @@
 }
 
 .link.active {
-  color: #5661c96a;
+  background-color: aliceblue;
+  color: #dde8df6a;
 }
+  

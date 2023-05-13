@@ -9,35 +9,35 @@
 
 .formLabel {
   align-self: baseline;
-  color: darkslateblue;
   font-weight: 700;
 }
 
 .formInput {
-  min-width: 260px;
+  min-width: 280px;
   display: block;
   margin-top: 5px;
-  border: 1px solid black;
-  border-radius: 5px;
+  height: 40px;
+  padding-left: 20px;
+  border-radius: 15px;
+  border: 1px solid #00a6ed;
   height: 26px;
   padding-left: 15px;
 }
 
-
 .btnAdd {
-    padding: 3px;
-    font-size: 12px;
-    width: 100px;
-    height: 30px;
-    background-color: darkslateblue;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transform: scale(1);
-    transition: transform 300 ease;
-  }
-  
-  .btnAdd:hover{
-      transform: scale(1.1)
-      
-  }
+  padding: 3px;
+  font-size: 12px;
+  width: 100px;
+  height: 30px;
+  background-color: #163263;
+  color: white;
+  border: 1px solid #163263;
+  border-radius: 15px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 300 ease;
+}
+
+.btnAdd:hover {
+  transform: scale(1.1);
+}

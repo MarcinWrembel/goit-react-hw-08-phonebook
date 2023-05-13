@@ -1,0 +1,7 @@
+@media screen and (min-width:960px) {
+    .sectionWrapper {
+        display: flex;
+        gap: 30px;
+        
+    }
+}
