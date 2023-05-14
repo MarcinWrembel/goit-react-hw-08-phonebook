@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { notifyErrorMailCheck } from 'utils/notify';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -26,6 +27,9 @@ export const register = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
+      if (error.response.data.code === 11000) {
+        notifyErrorMailCheck();
+      }
       return thunkAPI.rejectWithValue(error.message);
     }
   }

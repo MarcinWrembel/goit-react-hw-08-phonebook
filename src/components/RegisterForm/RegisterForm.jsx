@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import page from '../../pages/Home/HomePage.module.css';
 import css from './RegisterForm.module.css';
-import { notify } from 'utils/notify';
+import { notifyErrorPass } from 'utils/notify';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -12,16 +12,19 @@ export const RegisterForm = () => {
     const pass2 = form.elements.confPassword.value;
 
     if (pass1 !== pass2) {
-      console.log({ pass1 }, { pass2 });
-      return notify();
+      notifyErrorPass();
+      return 'error';
     }
   };
+
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
 
-    checkPasswords(form);
+    if (checkPasswords(form) === 'error') {
+      return;
+    }
 
     dispatch(
       register({
