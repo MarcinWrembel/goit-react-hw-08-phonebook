@@ -8,7 +8,8 @@
 }
 
 .active {
-  composes:link;
+  text-decoration: none;  
+  padding: 12px;
   color: #4d5768bd;
   text-shadow: 4px 6px 10px rgb(46, 48, 58);
 }
