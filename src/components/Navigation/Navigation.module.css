@@ -7,8 +7,9 @@
   color: #2a363b;
 }
 
-.link.active {
-  background-color: aliceblue;
-  color: #dde8df6a;
+.active {
+  composes:link;
+  color: #4d5768bd;
+  text-shadow: 4px 6px 10px rgb(46, 48, 58);
 }
   
